@@ -123,9 +123,14 @@ def sync_db_to_google_sheet():
     else:
         print("Database and Google Sheet are already in sync.")
 
-def sync_loop():
-    sync_google_sheet_to_db()
-    sync_db_to_google_sheet()
+def sync_loop(a):
+    if a==1:
+        sync_google_sheet_to_db()
+    if a==2:
+        sync_db_to_google_sheet()
 
 if __name__ == "__main__":
-    sync_loop()
+    print("Enter 1 to sync google sheets to db")
+    print("Enter 2 to sync db to google sheets")
+    a = int(input())
+    sync_loop(a)
